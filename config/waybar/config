@@ -1,0 +1,129 @@
+[{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "output": "eDP-1",
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["custom/spotify", "pulseaudio", "network", "backlight", "battery", "clock", "tray"],
+    // Modules configuration
+    "sway/workspaces": {
+         "disable-scroll": true,
+         "format": "{icon}",
+         "format-icons": {
+             "1": "",
+             "2": "ﭮ",
+             "3": "﬏",
+             "4": "",
+             "urgent": "",
+             "focused": "",
+             "default": ""
+         }, 
+     },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    }, 
+    "sway/window": {
+        "max-length": 50
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "custom/spotify": {
+        "format": "{}",
+        "escape": true,
+        "exec": "$HOME/.config/waybar/music.sh",
+        "exec-if": "pgrep spotify",
+        "on-click": "spotifycli --playpause",
+        "max-length": 50,
+        "on-scroll-up": "spotifycli --next",
+        "on-scroll-down": "spotifycli --prev"
+    },
+    "clock": {
+        "timezone": "Asia/Dubai",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    }, 
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": "({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-linked": "",
+        "format-disconnected": "⚠",
+        "format-alt": "{ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    } 
+}, {
+    "layer": "top",
+    "output": "HDMI-A-1",
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["clock#bar2", "tray"],
+    "sway/window": {
+        "max-length": 50
+    }, 
+    "clock#bar2": {
+        "timezone": "Asia/Dubai",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "sway/workspaces": {
+         "disable-scroll": true,
+         "format": "{icon}",
+         "format-icons": {
+             "1": "",
+             "2": "ﭮ",
+             "3": "﬏",
+             "4": "",
+             "urgent": "",
+             "focused": "",
+             "default": ""
+         }, 
+     },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "tray": {
+        "spacing": 10
+    },
+    
+}
+]
