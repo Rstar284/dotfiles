@@ -1,0 +1,10 @@
+local cartographer = require 'cartographer'
+
+cartographer.n['<leader>st'] = '<cmd>set spell!<cr>'
+cartographer.n['<leader>sn'] = ']s'
+cartographer.n['<leader>sp'] = 's['
+cartographer.n['<leader>sg'] = 'gz'
+cartographer.n['<leader>sw'] = 'wz'
+cartographer.n['<leader>usg'] = 'ugz'
+cartographer.n['<leader>usw'] = 'uwz'
+cartographer.n['<leader>sc'] = 'z='

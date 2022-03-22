@@ -1,7 +1,6 @@
-[{
+{
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "output": "eDP-1",
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
@@ -12,10 +11,10 @@
          "disable-scroll": true,
          "format": "{icon}",
          "format-icons": {
-             "1": "",
-             "2": "ﭮ",
-             "3": "﬏",
-             "4": "",
+             "1": "  ",
+             "2": " ﭮ ",
+             "3": " ﬏ ",
+             "4": "  ",
              "urgent": "",
              "focused": "",
              "default": ""
@@ -91,39 +90,4 @@
         },
         "on-click": "pavucontrol"
     } 
-}, {
-    "layer": "top",
-    "output": "HDMI-A-1",
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["clock#bar2", "tray"],
-    "sway/window": {
-        "max-length": 50
-    }, 
-    "clock#bar2": {
-        "timezone": "Asia/Dubai",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
-    "sway/workspaces": {
-         "disable-scroll": true,
-         "format": "{icon}",
-         "format-icons": {
-             "1": "",
-             "2": "ﭮ",
-             "3": "﬏",
-             "4": "",
-             "urgent": "",
-             "focused": "",
-             "default": ""
-         }, 
-     },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "tray": {
-        "spacing": 10
-    },
-    
 }
-]

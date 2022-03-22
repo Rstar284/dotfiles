@@ -1,0 +1,5 @@
+#!/bin/bash
+
+name="$(date +%Y-%m-%d-%H-%M-%S).png"
+grim -g "$(slurp)" "${HOME}/screenshots/${name}"
+curl https://api.upload.systems/images/upload -F "file=@${HOME}/screenshots/${name}" -F "key=<uplaod key>" | wl-copy "https://<domain>.<tld>/$(jq '.image.id' | sed "s/\"//" | sed "s/\"//")"

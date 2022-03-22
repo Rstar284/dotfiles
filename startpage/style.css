@@ -1,0 +1,187 @@
+
+.info {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.1;
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+    z-index: 2;
+}
+@media all and (max-width: 550px) {
+    .info, hr
+    {
+        visibility: hidden;
+        margin: auto;
+    }
+    .watch, .social, .dev, .linux {
+        flex-direction: column;
+        width: auto;
+    }
+}
+.list_title
+{
+    font-size: 35px;
+}
+.lists {
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: top;
+    justify-content: center; 
+    font-family: 'Overpass Mono', monospace;
+}
+.watch, .social, .dev, .linux {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+hr {
+    margin-top: 20px;
+    color: #dee3de;
+    width: 500px;
+}
+a:visited, a:link, a:active {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 26px;
+    text-indent: 2px;
+    line-height: 1.5;
+}
+a:hover {
+    color: #97cdfd !important
+}
+#greeting {
+    font-size: 38px;
+    font-weight: 100;
+    color: #dee3de;
+}
+#time {
+    font-size: 48px;
+    animation:blinking 5s infinite;
+    }
+    @keyframes blinking{
+    0%{     color: #1383F2; }
+    20%{    color: #459EF7; }
+    40%{    color: #77B8F8; }
+    60%{    color: #77B8F8; }
+    80%{    color: #459EF7; }
+    100%{   color: #1383F2; }
+}
+
+#w {
+    animation:w_blink 5s infinite;
+    }
+    @keyframes w_blink{
+    0%{     color: #9866ED; }
+    20%{    color: #9B67F5; }
+    40%{    color: #9873D9; }
+    60%{    color: #834CE0; }
+    80%{    color: #7739E3; }
+    100%{   color: #9866ED; }
+}
+#s {
+    animation:s_blink 5s infinite;
+    }
+    @keyframes s_blink{
+    0%{     color: #5BE3AF; }
+    20%{    color: #22AB76; }
+    40%{    color: #1FC485; }
+    60%{    color: #5EB895; }
+    80%{    color: #66D9AD; }
+    100%{   color: #5BE3AF; }
+}
+#d {
+    animation:d_blink 5s infinite;
+    }
+    @keyframes d_blink{
+    0%{     color: #D1B22A; }
+    20%{    color: #D9C777; }
+    40%{    color: #D1B22A; }
+    60%{    color: #CCA806; }
+    80%{    color: #E0BE24; }
+    100%{   color: #D1B22A; }
+}
+#l {
+    animation:l_blink 5s infinite;
+    }
+    @keyframes l_blink{
+    0%{     color: #3270f3; }
+    20%{    color: #4a80f4; }
+    40%{    color: #6291f6; }
+    60%{    color: #7aa2f7; }
+    80%{    color: #92b3f8; }
+    100%{   color: #aac4fa; }
+}
+#youtube:hover {
+    color: #FF0000 !important
+}
+#reddit:hover{
+    color: #FF4500 !important
+}
+#archwiki:hover {
+    color: #0f94d2 !important
+}
+#discord:hover {
+    color: #5865f2 !important
+}
+#stackoverflow:hover {
+    color: #EF8236 !important
+}
+#github:hover {
+    color: #4078c0 !important
+}
+.mode_class{
+    /*display: flex;
+    justify-content: center;
+    padding-top: 200px;*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.search_block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    transition: box-shadow 0.5s;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  input {
+    color: #eceff4;
+    background-color: #424868;
+    width: 700px;
+    text-align: center;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    vertical-align: top;
+    outline: none;
+    border-bottom-left-radius: 10px;     
+    border-top-left-radius: 10px;
+  }
+  input:focus::placeholder {
+      color: transparent;
+  }
+  button {
+      width: 50px;
+      height: 50px;
+      background: #424868;
+      vertical-align: top;
+      border: none;
+      color: #97cdfd;
+      transition: background-color 0.3s, color 0.3s;
+  }
+  button:hover {
+      background-color: #6E93CC;
+      color: #bbb;
+  }
+  .go {
+      color: #eceff4;
+      border-bottom-right-radius: 10px;
+      border-top-right-radius: 10px;
+      
+  }

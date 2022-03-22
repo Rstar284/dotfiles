@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "startpage",
+  "short_name": "startpage",
+  "version": "0.1",
+  "description": "Overrides the browsers newtab page with a custom startpage.",
+  "author": "Rstar284",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": ["storage"]
+}

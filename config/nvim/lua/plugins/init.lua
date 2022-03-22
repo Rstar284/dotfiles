@@ -1,0 +1,7 @@
+require('lualine')
+require('nvim-cartographer')
+require('nvim-lspconfig')
+require('treesitter')
+require('presence')
+require('nvim-cmp-lsp')
+require('Comment').setup()

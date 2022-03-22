@@ -54,18 +54,12 @@ exec mako
 exec wl-paste -t text --watch clipman store --no-persist
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 exec dbus-update-activation-environment 2>/dev/null && \
-     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
-exec swaymsg input "2:8:AlpsPS/2_ALPS_DualPoint_TouchPad" events disabled
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
+    dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTO
+exec nm-applet --indicator
 
 ### Input configuration
-#
-#
 input type:touchpad {
        dwt enabled
-       tap enabled
 }
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
@@ -108,7 +102,6 @@ font pango:Hack Nerd Font Regular 13
     bindsym XF86AudioPrev exec spotifycli --prev
     # Browser
     bindsym $mod+Shift+b exec $browser
-    # Disable touchpad
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -240,7 +233,22 @@ bar {
     swaybar_command waybar
 }
 
+# No borders
 default_border none
 default_floating_border none
 
+# Gaps
+gaps inner 10
+gaps right 5
+gaps left 5
+
+# Assign Windows to specific workspaces
+for_window [app_id="firefox"] move workspace number 1
+for_window [class="discord"] move workspace number 2
+for_window [class="spotify"] move workspace number 4
+
+# Round Borders
+# border_images.focused /home/rstar284/Pictures/rounded_and_shadows.png
+
 include /etc/sway/config.d/*
+
