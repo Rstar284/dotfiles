@@ -18,11 +18,11 @@
              "urgent": "",
              "focused": "",
              "default": ""
-         }, 
+         },
      },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
-    }, 
+    },
     "sway/window": {
         "max-length": 50
     },
@@ -33,8 +33,8 @@
     "custom/spotify": {
         "format": "{}",
         "escape": true,
+        "interval": 5,
         "exec": "$HOME/.config/waybar/music.sh",
-        "exec-if": "pgrep spotify",
         "on-click": "spotifycli --playpause",
         "max-length": 50,
         "on-scroll-up": "spotifycli --next",
@@ -44,7 +44,7 @@
         "timezone": "Asia/Dubai",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
-    }, 
+    },
     "backlight": {
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
@@ -89,5 +89,5 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    } 
+    }
 }

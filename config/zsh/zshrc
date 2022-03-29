@@ -9,12 +9,10 @@ export FZF_DEFAULT_OPTS='
     --cycle
     --height=50%
     --info=hidden
-    --prompt=❯\ 
+    --prompt=❯\
     --pointer=➜
-    --color=16
-    --color=bg:-1,bg+:8
-    --color=fg:-1,fg+:-1
-    --color=hl:2,hl+:2
+    --color fg:7,bg:0,hl:1,fg+:232,bg+:1,hl+:255
+    --color info:7,prompt:2,spinner:1,pointer:232,marker:1
     --color=prompt:2
     --color=pointer:4
     --color=gutter:-1
@@ -29,12 +27,100 @@ export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=sway
 export GTK_USE_PORTAL=0
 export ZPLUGINDIR=${ZPLUGINDIR:-${ZDOTDIR:-$HOME/.config/zsh}/plugins}
+export LS_COLORS="${LS_COLORS}:su=30;41:ow=30;42:st=30;44:"
 
 alias cpf='wl-clip < '
 alias lsl='ls -Al'
 alias ls='ls -A'
 alias wshowkeys='wshowkeys -b="#1c1b22" -a bottom -F="Hack Nerd Font Regular 20"'
 alias plugins='ls $ZPLUGINDIR'
+
+# Changing Directories
+unsetopt auto_cd         # if I type a directory without 'cd', zsh automatically
+                         # cds into it
+setopt auto_pushd        # when I cd, push the old directory onto the dir stack
+setopt pushd_ignore_dups # don't push duplicate copies of a directory to
+                         # the directory stack
+
+# Completion
+setopt auto_list         # when tab completion is ambiguous, list choices
+setopt auto_menu         # when tab completion is ambiguous, use menu completion
+                         # (fill in the next option when you press tab)
+setopt list_beep         # when tab completion is ambiguous, beep
+unsetopt menu_complete   # when tab completion is ambiguous, zsh automatically
+                         # fills in the first option
+unsetopt list_ambiguous  # when there is an unambiguous prefix, insert that
+                         # before inserting ambiguous stuff from the menu.
+                         # menu_complete takes precedence over this.
+
+# Expansion and Globbing
+setopt glob              # expand stuff to generate filenames.
+setopt extended_glob     # treat #, ~, and ^ as globbing patterns
+setopt nomatch           # zsh gets mad when I glob patterns that don't exist
+
+# History
+setopt append_history    # append to the history file
+setopt hist_ignore_dups  # don't add immediately repeated commands to history
+setopt extended_history  # add timestamps to history.  For a rough idea of the
+                         # extra disk space this uses, you'll use up an extra
+                         # 15kB for running 1000 commands.  Your call.
+
+# Init
+
+# Input / Output
+setopt aliases           # use aliases defined below
+setopt correct           # correct my bad spelling of commands
+unsetopt correct_all     # correct my bad spelling of all argument son a line
+                         # This is unset because it is fairly common to have an
+                         # argument that is similar to a file in the current
+                         # directory (eg, sudo git would correct to .git)
+# CUSTOMIZE(keyboard_layout)
+setopt print_exit_value  # prints the exit value of commands when it's not 0
+                         # (success); useful when writing shell scripts
+
+# Job Control
+setopt bg_nice           # nice background jobs (run them with lower priority)
+setopt check_jobs        # yell at me if I try to exit zsh with jobs running
+unsetopt notify          # notify me of background job status immediately
+
+# The following lines were added by compinstall
+zstyle ':completion:*' completer _expand _complete _ignored _match _correct _approximate _prefix
+zstyle ':completion:*' completions 1
+zstyle ':completion:*' glob 1
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' matcher-list '+' '+m:{[:lower:]}={[:upper:]}' '+m:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+r:|[._-]=* r:|=* l:|=*'
+zstyle ':completion:*' max-errors 3 numeric
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' substitute 1
+
+
+# insert all expansions for expand completer
+zstyle ':completion:*:expand:*' tag-order all-expansions
+
+# formatting and messages
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:descriptions' format '%B%d%b'
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:warnings' format 'No matches for: %d'
+zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
+
+# offer indexes before parameters in subscripts
+zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
+
+zstyle '*' hosts $hosts
+zstyle '*' users $users
+
+# ignore completion functions (until the _ignored completer)
+zstyle ':completion:*:functions' ignored-patterns '_*'
+
+# don't load every tab-completion module at startup.  instead, mark them all
+# as autoloaded so that when you need them, they'll get loaded.
+autoload -Uz compinit
+# allow tab completion for command line options
+compinit
+# End of lines added by compinstall
 
 if [[ ! -d $ZPLUGINDIR/zsh_unplugged ]]; then
   git clone --quiet https://github.com/mattmc3/zsh_unplugged $ZPLUGINDIR/zsh_unplugged
@@ -46,9 +132,13 @@ repos=(
     zsh-users/zsh-completions
     zsh-users/zsh-syntax-highlighting
     zsh-users/zsh-autosuggestions
+    zsh-users/zsh-history-substring-search
 )
 
 plugin-load $repos
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 function plugin-update {
   ZPLUGINDIR=${ZPLUGINDIR:-$HOME/.config/zsh/plugins}
@@ -76,8 +166,6 @@ if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
     exec sway
 fi
 
-(cat ~/.cache/wal/sequences &)
-source ~/.cache/wal/colors-tty.sh
-source /usr/share/nvm/init-nvm.sh
-neofetch --ascii "$( cowsay -f tux -W 30 "I use Arch btw.")"
+# neofetch --ascii "$( cowsay -f tux -W 30 "I use Arch btw.")"
+rfetch2
 eval $(starship init zsh)
