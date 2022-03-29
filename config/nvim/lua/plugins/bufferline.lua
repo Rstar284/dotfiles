@@ -1,12 +1,12 @@
 require('bufferline').setup {
   options = {
     numbers = function(opts)
-    return string.format('%s|%s', opts.ordinal, opts.id)
+    return string.format('%s |', opts.id)
     end,
     max_name_length = 18,
     max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
     tab_size = 18,
-    offsets = {{filetype = "NERDTree", text = "File Explorer", text_align = "left" --[[| "center" | "right",]]}},
+    offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "left" --[[| "center" | "right",]]}},
     show_buffer_icons = true, --| false, -- disable filetype icons for buffers
     show_buffer_close_icons = true,--| false,
     show_close_icon = true,   --| false,

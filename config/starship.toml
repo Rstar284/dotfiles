@@ -1,37 +1,31 @@
-add_newline = true
-right_format = """[$git_branch$git_status$cmd_duration$memory_usage$time](bold dimmed cyan) """
 format = """
- [╭─](bold dimmed cyan)$username$hostname [$directory](bold dimmed blue)
- [╰─](bold dimmed cyan) $character
+$username@$hostname\
+$directory \
+$git_branch\
+$git_status\
+$character\
 """
 
 continuation_prompt = '[λ > ](bold blue)'
 
 [character]
-success_symbol = "[λ](bold green)"
-error_symbol = "[λ](bold red)"
+success_symbol = "[λ](bold #7aa2f7)"
+error_symbol = "[λ](bold #7aa2f7)"
 
 [username]
-format = "[$user]($style)@"
+format = "[$user]($style)"
 show_always = true
 style_root = "bold red"
-style_user = "bold green"
+style_user = "#2ac3de"
 
 [hostname]
-format = "[$hostname]($style)"
-style = "bold green"
+format = "[$hostname]($style) "
+style = "#2ac3de"
 ssh_only = false
 
-[time]
-format = "| 🕙 [$time](bold cyan)"
-use_12hr = true
-disabled = false
+[directory]
+format = "[$path]($style) "
+style = "#7dcfff"
 
-[cmd_duration]
-format = "| cmd took [$duration]($style) "
-style = "bold dimmed blue"
-
-[memory_usage]
-disabled = false
-threshold = 0
-format = "| using [$ram_pct RAM](bold red) "
+[git_branch]
+format = "[$symbol$branch]($style) "
