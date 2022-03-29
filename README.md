@@ -1,5 +1,5 @@
 # Tokyo Night Obsessed
-# What is this
+## What is this
 These are my dotfiles. Not all of them, just the ones that have to do with my Linux desktop. But then, probably not all of them.
 
 If this confuses you, then that's because it is confusing. My dotfiles are a mess. I might organize them better at some point, but not now.
