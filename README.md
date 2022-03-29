@@ -1,4 +1,4 @@
-## Tokyo Night Obsessed
+# Tokyo Night Obsessed
 # What is this
 These are my dotfiles. Not all of them, just the ones that have to do with my Linux desktop. But then, probably not all of them.
 
