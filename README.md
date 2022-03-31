@@ -12,3 +12,6 @@ If you're still reading this, then you are either very stubborn, or very interes
 
 ## Screenshots
 coming soon... when i get the time.
+
+## Setup
+will probably add this too
