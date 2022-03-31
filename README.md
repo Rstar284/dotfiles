@@ -9,3 +9,6 @@ If you want to learn something, your best bet is to stay far, far away from my d
 In here, you'll find an absolutely unnecessarily complex swaywm setup, and a bunch of other stuff.
 
 If you're still reading this, then you are either very stubborn, or very interested in looking at a piece of my setup. In that case... good luck.
+
+## Screenshots
+coming soon... when i get the time.
