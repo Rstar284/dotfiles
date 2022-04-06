@@ -17,11 +17,11 @@ c11="\033[0;90m"
 # Get the init system
 get_init() {
 	os=$(uname -o)
-	if [ "$os" = "Android" ]; then
+	if [[ "$os" = "Android" ]]; then
 		echo 'init.rc'
-	elif pidof -q systemd; then
+	elif [[ `systemctl` =~ "~\.mount" ]]; then
 		echo 'systemd'
-	elif [ -f '/sbin/openrc' ]; then
+	elif [[ -f '/sbin/openrc' ]]; then
 		echo 'openrc'
 	else
 		cut -d ' ' -f 1 /proc/1/comm
