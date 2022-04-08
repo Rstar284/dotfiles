@@ -19,8 +19,7 @@ cartographer.n["<A-UP>"] = "<C-w>k"
 cartographer.n["<A-RIGHT>"] = "<C-w>l"
 
 cartographer.n["<C-t>"] = "<cmd>:tabnew<CR>"
-cartographer.n["<leader>cl"] = "<cmd>:tabclose<CR>"
-cartographer.n["t]"] = "<cmd>:tabnext<CR>"
-cartographer.n["[t"] = "<cmd>:tabprevious<CR>"
-cartographer.n["<C-t><C-h>"] = [[<cmd>:tabedit <cr>=expand("%:p:h")<cr><cr>]]
+cartographer.n["<leader>tc"] = "<cmd>:tabclose<CR>"
+cartographer.n["tn"] = "<cmd>:tabnext<CR>"
+cartographer.n["tp"] = "<cmd>:tabprevious<CR>"
 cartographer.n["<leader>cd"] = "<cmd>:cd %:p:h<cr>:pwd<cr>"

@@ -14,7 +14,7 @@ vim.o.foldlevel = 99
 vim.o.complete = "kspell"
 vim.o.spelllang = "en"
 vim.o.spellsuggest = "best,9"
-vim.o.completeopt = "menu,menuone,noselect"
+vim.o.completeopt = "menu,menuone,noselect,noinsert"
 
 if vim.fn.has("clipboard") == 1 then
     vim.opt.clipboard:append("unnamedplus")
