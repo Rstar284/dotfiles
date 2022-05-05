@@ -20,6 +20,6 @@ cartographer.n["<A-RIGHT>"] = "<C-w>l"
 
 cartographer.n["<C-t>"] = "<cmd>:tabnew<CR>"
 cartographer.n["<leader>tc"] = "<cmd>:tabclose<CR>"
-cartographer.n["tn"] = "<cmd>:tabnext<CR>"
-cartographer.n["tp"] = "<cmd>:tabprevious<CR>"
+cartographer.n["tn"] = "<cmd>:BufferLineCycleNext<CR>"
+cartographer.n["tp"] = "<cmd>:BufferLineCyclePrev<CR>"
 cartographer.n["<leader>cd"] = "<cmd>:cd %:p:h<cr>:pwd<cr>"

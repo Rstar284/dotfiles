@@ -27,13 +27,14 @@ require "paq" {
     "Pocco81/AutoSave.nvim";           	-- AutoSave
     "mbbill/undotree";                 	-- Undotree
     "Iron-E/nvim-cartographer";        	-- Cartographer
+    "sbdchd/neoformat";                	-- Neoformat
     "goolord/alpha-nvim";              	-- Alpha
     'BlakeJC94/alpha-nvim-fortune';    	-- Alpha Fortune
     "nvim-lua/telescope.nvim";		-- Telescope
     'stevearc/dressing.nvim'; 		-- Dressing
     {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' };	-- Telescope FZF
     "nvim-lua/plenary.nvim";		-- Plenary
-    "Shatur/neovim-session-manager",
+    "Shatur/neovim-session-manager",	-- Session Manager
     "nvim-lua/popup.nvim"; 	    	-- Popup
     "rcarriga/nvim-notify";
     "lewis6991/gitsigns.nvim";		-- Gitsigns

@@ -158,7 +158,7 @@ function plugin-compile {
 }
 
 function short () {
-    curl -X POST https://link.what-is.ml/api/new -H "Content-Type: application/json" -d "{\"url\": \"$1\"}" | xclip -sel clip
+    curl -X POST https://link.what-is.ml/api/new -H "Content-Type: application/json" -d "{\"url\": \"$1\"}" | wl-copy
 }
 
 if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
@@ -166,6 +166,6 @@ if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
     exec sway
 fi
 
-# neofetch --ascii "$( cowsay -f tux -W 30 "I use Arch btw.")"
+source ~/.nvm/nvm.sh
 rfetch2
 eval $(starship init zsh)
