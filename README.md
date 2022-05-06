@@ -10,6 +10,19 @@ In here, you'll find an absolutely unnecessarily complex swaywm setup, and a bun
 
 If you're still reading this, then you are either very stubborn, or very interested in looking at a piece of my setup. In that case... good luck.
 
+## Setup
+### Distro: Arch Linux (btw)
+### Editor: [Neovim](github.com/neovim/neovim/)
+### Editor Package Manager: [Paq](https://github.com/savq/paq-nvim)
+I'll document my nvim setup a bit more later.
+### WM: [Swaywm](github.com/swaywm/sway/)
+### Notifications: [Mako](https://github.com/emersion/mako)
+### Application Menu: [Wofi](https://hg.sr.ht/~scoopta/wofi)
+### Terminal: [Alacriity](https://github.com/alacritty/alacritty)
+### Shell: [Zsh](https://www.zsh.org/)
+### Shell Prompt: [Starship](https://starship.rs/)
+### Music Viusalizer: [Cava](https://github.com/karlstav/cava)
+
 ## Screenshots
 ### Nvim + cava + fetch
 ![screenshot_1](https://raw.githubusercontent.com/Rstar284/dotfiles/main/screenshots/setup-1.png)
